@@ -26,5 +26,22 @@ Feature: Validate element created dropdown column
     Examples:
       | url                       |
       | https://www.kayak.com.my/ |
-      | https://www.kayak.com.pr/ |
       | https://www.kayak.com.br/ |
+      | https://www.kayak.com.pr/ |
+      
+
+    Scenario Outline: Navigate between menu_option and validate the URL
+      Given I navigate to the kayak main page
+      Then I should be in the "home" page
+      When I click on the "<MenuOption>" "<element_type>"
+      Then The URL of the page should match the expected "<URL>"
+
+    Examples:
+      | MenuOption     | element_type | URL                                  |
+      | Flights        | button       | https://www.kayak.com.co/flights     |
+      | Stays          | button       | https://www.kayak.com.co/stays       |
+      | Cars           | button       | https://www.kayak.com.co/cars        |
+      | Citybreaks     | button       | https://www.kayak.com.co/citybreaks  |  
+
+
+    
