@@ -2,6 +2,7 @@ from behave import then, use_step_matcher
 from hamcrest import equal_to, assert_that, only_contains
 
 from lib.components.generalcomponents import GeneralComponents
+from lib.pages.webelements.homewebelements import HomeWebElements
 from lib.helpers.generalhelpers import validate_text, transform_validation, transformation_helper, join_words, \
     split_and_replace_string, transformation_to_element_name
 
@@ -60,3 +61,15 @@ def step_impl(context, element_name, element_type, expression):
     assertion = transform_validation(expression)
     button_enabled = GeneralComponents.is_enabled_in_page(context, element_name)
     return assert_that(button_enabled, equal_to(assertion))
+
+@then('The "{menu_option}" page should open correctly')
+def step_check_page_opened(context, menu_option):
+    menu_option_element = menu_option.lower() + "_button"
+    element_selector = getattr(HomeWebElements, menu_option_element)
+    opened = GeneralComponents.wait_until_element_is_present(context, element_selector)
+    assert opened, f"{menu_option} page did not open correctly."
+
+@then('The URL of the page should match the expected "(?P<expected_url>.*)"')
+def step_check_url(context, expected_url):
+    current_url = context.browser.get_current_url()
+    assert current_url == expected_url, f"Expected URL: {expected_url}, Actual URL: {current_url}"

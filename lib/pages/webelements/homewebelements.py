@@ -12,3 +12,8 @@ class HomeWebElements:
     login_button = (By.XPATH, "//div[@class='auth-account-wrap menu__wrapper']//button[contains(@class, 'Button-No-Standard-Style')]")
     favorite_button =(By.XPATH, "//button[@class='trips-drawer-trigger triggerV2' and @aria-label='Abrir Trips']")
     
+    flights_button = (By.XPATH, "//a[@class='dJtn dJtn-active dJtn-expanded dJtn-mod-variant-accordion' and contains(@aria-label, 'Buscar vuelos') and @aria-current='page' and @tabindex='-1']")
+    stays_button = (By.XPATH, "//a[@href='/stays' and @aria-label='Buscar hoteles ' and @class='dJtn dJtn-expanded dJtn-mod-variant-accordion' and @aria-current='false' and @tabindex='-1']")
+    cars_button = (By.XPATH, "//a[@href='/cars' and @aria-label='Buscar autos ' and @class='dJtn dJtn-expanded dJtn-mod-variant-accordion' and @aria-current='false' and @tabindex='-1']")
+    citybreaks_button = (By.XPATH, "//a[@href='/citybreaks' and @aria-label='Buscar vacaciones ' and contains(@class, 'dJtn-expanded') and contains(@class, 'dJtn-mod-variant-accordion') and @aria-current='false' and @tabindex='-1']")
+    
