@@ -5,7 +5,7 @@ Feature: Validate element created dropdown column
   Scenario: Navigate to the Kayak home page and validate principal elements
     Given I navigate to the kayak main page
     Then I should be in the "home" page
-    Then The page "should" contain the next elements
+    And The page "should" contain the next elements
       | name                   | type   |
       | logo                   | input  |
       | title                  | text   |
@@ -15,7 +15,7 @@ Feature: Validate element created dropdown column
   Scenario: Validate URL of Home page
     Given I navigate to the kayak main page
     Then I should be in the "home" page
-    Then The url page should be equal to the next "https://www.kayak.com.co/" url
+    And The url page should be equal to the next "https://www.kayak.com.co/" url
 
     Scenario Outline: Navigate between countries and validate the URL
       Given I navigate to the kayak main page

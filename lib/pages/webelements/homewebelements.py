@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class HomeWebElements:
-    where_label = (By.XPATH, "//div[contains(@class, 'ui-layout-HeaderMainLogo')]")
+    where_label = (By.XPATH, "//div[contains(@class, 'main-logo__logo') and contains(@class, 'has-compact-logo')]")
     signin_button = (By.XPATH, "//div[@role='button' and contains(@class, 'ZGw-') and contains(@class, 'ZGw--mod-size-medium')]")
     search_button = (By.CSS_SELECTOR, '.pageContent .SearchPage__FrontDoor .HPw7-form-fields-and-submit .HPw7-submit button')
     
